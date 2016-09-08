@@ -1,0 +1,2142 @@
+{
+  "title": "Human Resources",
+  "version": "2.0.0",
+  "description": "An application for Human Resources",
+  "preview": {
+    "url": "https://app.form.io/formio-app-humanresources/dist",
+    "repo": "https://github.com/formio/formio-app-humanresources"
+  },
+  "roles": {
+    "administrator": {
+      "title": "Administrator",
+      "description": "A role for Administrative Users.",
+      "admin": true,
+      "default": false
+    },
+    "authenticated": {
+      "title": "Authenticated",
+      "description": "A role for Authenticated Users.",
+      "admin": false,
+      "default": false
+    },
+    "anonymous": {
+      "title": "Anonymous",
+      "description": "A role for Anonymous Users.",
+      "admin": false,
+      "default": true
+    }
+  },
+  "forms": {
+    "userLogin": {
+      "title": "User Login",
+      "type": "form",
+      "name": "userLogin",
+      "path": "user/login",
+      "tags": [],
+      "components": [
+        {
+          "input": true,
+          "tableView": true,
+          "inputType": "email",
+          "label": "Email",
+          "lockKey": true,
+          "key": "email",
+          "placeholder": "Enter your email address",
+          "prefix": "",
+          "suffix": "",
+          "defaultValue": "",
+          "protected": false,
+          "unique": false,
+          "persistent": true,
+          "type": "email"
+        },
+        {
+          "input": true,
+          "tableView": false,
+          "inputType": "password",
+          "label": "Password",
+          "lockKey": true,
+          "key": "password",
+          "placeholder": "Enter your password.",
+          "prefix": "",
+          "suffix": "",
+          "protected": true,
+          "persistent": true,
+          "type": "password"
+        },
+        {
+          "input": true,
+          "label": "Submit",
+          "tableView": false,
+          "key": "submit",
+          "size": "md",
+          "leftIcon": "",
+          "rightIcon": "",
+          "block": false,
+          "action": "submit",
+          "disableOnInvalid": true,
+          "theme": "primary",
+          "type": "button"
+        }
+      ],
+      "access": [
+        {
+          "type": "read_all",
+          "roles": [
+            "anonymous"
+          ]
+        }
+      ],
+      "submissionAccess": [
+        {
+          "type": "create_own",
+          "roles": [
+            "anonymous"
+          ]
+        }
+      ]
+    },
+    "userRegister": {
+      "title": "User Register",
+      "type": "form",
+      "name": "userRegister",
+      "path": "user/register",
+      "tags": [],
+      "components": [
+        {
+          "input": true,
+          "tableView": true,
+          "inputType": "email",
+          "label": "Email",
+          "lockKey": true,
+          "key": "email",
+          "placeholder": "Enter your email address",
+          "prefix": "",
+          "suffix": "",
+          "defaultValue": "",
+          "protected": false,
+          "unique": false,
+          "persistent": true,
+          "type": "email"
+        },
+        {
+          "input": true,
+          "tableView": false,
+          "inputType": "password",
+          "label": "Password",
+          "lockKey": true,
+          "key": "password",
+          "placeholder": "Enter your password.",
+          "prefix": "",
+          "suffix": "",
+          "protected": true,
+          "persistent": true,
+          "type": "password"
+        },
+        {
+          "type": "button",
+          "input": true,
+          "label": "Submit",
+          "key": "submit",
+          "size": "md",
+          "leftIcon": "",
+          "rightIcon": "",
+          "block": false,
+          "action": "submit",
+          "disableOnInvalid": true,
+          "theme": "primary"
+        }
+      ],
+      "access": [
+        {
+          "type": "read_all",
+          "roles": [
+            "anonymous"
+          ]
+        }
+      ],
+      "submissionAccess": [
+        {
+          "type": "create_own",
+          "roles": [
+            "anonymous"
+          ]
+        }
+      ]
+    },
+    "benefitsEnrollment": {
+      "title": "Benefits Enrollment",
+      "type": "form",
+      "name": "benefitsEnrollment",
+      "path": "benefits",
+      "display": "form",
+      "action": "",
+      "tags": [
+        "common"
+      ],
+      "components": [
+        {
+          "input": false,
+          "title": "Employee Information",
+          "theme": "primary",
+          "components": [
+            {
+              "input": false,
+              "columns": [
+                {
+                  "components": [
+                    {
+                      "input": true,
+                      "tableView": true,
+                      "inputType": "text",
+                      "inputMask": "",
+                      "label": "First Name",
+                      "key": "firstName",
+                      "placeholder": "Enter your first name",
+                      "prefix": "",
+                      "suffix": "",
+                      "multiple": false,
+                      "defaultValue": "",
+                      "protected": false,
+                      "unique": false,
+                      "persistent": true,
+                      "validate": {
+                        "required": false,
+                        "minLength": "",
+                        "maxLength": "",
+                        "pattern": "",
+                        "custom": "",
+                        "customPrivate": false
+                      },
+                      "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                      },
+                      "type": "textfield",
+                      "tags": []
+                    },
+                    {
+                      "input": true,
+                      "tableView": true,
+                      "label": "Home Address",
+                      "key": "homeAddress",
+                      "placeholder": "Type your address here",
+                      "multiple": false,
+                      "protected": false,
+                      "unique": false,
+                      "persistent": true,
+                      "map": {
+                        "region": "",
+                        "key": ""
+                      },
+                      "validate": {
+                        "required": false
+                      },
+                      "type": "address",
+                      "tags": [],
+                      "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                      }
+                    },
+                    {
+                      "input": true,
+                      "tableView": true,
+                      "label": "Gender",
+                      "key": "gender",
+                      "placeholder": "",
+                      "data": {
+                        "values": [
+                          {
+                            "value": "male",
+                            "label": "Male"
+                          },
+                          {
+                            "value": "female",
+                            "label": "Female"
+                          }
+                        ],
+                        "json": "",
+                        "url": "",
+                        "resource": ""
+                      },
+                      "dataSrc": "values",
+                      "valueProperty": "",
+                      "defaultValue": "",
+                      "refreshOn": "",
+                      "filter": "",
+                      "authenticate": false,
+                      "template": "<span>{{ item.label }}</span>",
+                      "multiple": false,
+                      "protected": false,
+                      "unique": false,
+                      "persistent": true,
+                      "validate": {
+                        "required": false
+                      },
+                      "type": "select",
+                      "tags": [],
+                      "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                      }
+                    }
+                  ]
+                },
+                {
+                  "components": [
+                    {
+                      "input": true,
+                      "tableView": true,
+                      "inputType": "text",
+                      "inputMask": "",
+                      "label": "Last Name",
+                      "key": "lastName",
+                      "placeholder": "Enter your last name",
+                      "prefix": "",
+                      "suffix": "",
+                      "multiple": false,
+                      "defaultValue": "",
+                      "protected": false,
+                      "unique": false,
+                      "persistent": true,
+                      "validate": {
+                        "required": false,
+                        "minLength": "",
+                        "maxLength": "",
+                        "pattern": "",
+                        "custom": "",
+                        "customPrivate": false
+                      },
+                      "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                      },
+                      "type": "textfield",
+                      "tags": []
+                    },
+                    {
+                      "input": true,
+                      "tableView": true,
+                      "inputMask": "(999) 999-9999",
+                      "label": "Home Phone",
+                      "key": "homePhone",
+                      "placeholder": "Enter your home phone number",
+                      "prefix": "",
+                      "suffix": "",
+                      "multiple": false,
+                      "protected": false,
+                      "unique": false,
+                      "persistent": true,
+                      "defaultValue": "",
+                      "validate": {
+                        "required": false
+                      },
+                      "type": "phoneNumber",
+                      "tags": [],
+                      "conditional": {
+                        "show": "",
+                        "when": null,
+                        "eq": ""
+                      }
+                    }
+                  ]
+                }
+              ],
+              "type": "columns",
+              "tags": [],
+              "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+              }
+            }
+          ],
+          "type": "panel",
+          "tags": [],
+          "conditional": {
+            "show": "",
+            "when": null,
+            "eq": ""
+          }
+        },
+        {
+          "input": false,
+          "title": "Health Plan",
+          "theme": "success",
+          "components": [
+            {
+              "input": true,
+              "tableView": true,
+              "label": "Select your health plan",
+              "key": "healthplan",
+              "placeholder": "Choose one",
+              "data": {
+                "values": [
+                  {
+                    "value": "ppo",
+                    "label": "PPO"
+                  },
+                  {
+                    "value": "hsa",
+                    "label": "HSA"
+                  },
+                  {
+                    "value": "none",
+                    "label": "None"
+                  }
+                ],
+                "json": "",
+                "url": "",
+                "resource": ""
+              },
+              "dataSrc": "values",
+              "valueProperty": "",
+              "defaultValue": "",
+              "refreshOn": "",
+              "filter": "",
+              "authenticate": false,
+              "template": "<span>{{ item.label }}</span>",
+              "multiple": false,
+              "protected": false,
+              "unique": false,
+              "persistent": true,
+              "validate": {
+                "required": false
+              },
+              "type": "select",
+              "tags": [],
+              "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+              },
+              "lockKey": true
+            },
+            {
+              "conditional": {
+                "eq": "hsa",
+                "when": "healthplan",
+                "show": "true"
+              },
+              "tags": [],
+              "type": "number",
+              "validate": {
+                "custom": "",
+                "multiple": "",
+                "integer": "",
+                "step": "0.00",
+                "max": "",
+                "min": "",
+                "required": false
+              },
+              "persistent": true,
+              "protected": false,
+              "defaultValue": 0,
+              "suffix": "per pay period",
+              "prefix": "$",
+              "placeholder": "",
+              "key": "contributionAmount",
+              "label": "Contribution Amount",
+              "inputType": "number",
+              "tableView": true,
+              "input": true
+            },
+            {
+              "input": true,
+              "tableView": true,
+              "label": "Select your Dental Plan",
+              "key": "selectyourDentalPlan",
+              "placeholder": "Choose one",
+              "data": {
+                "values": [
+                  {
+                    "value": "dentalHealthCenterPlan",
+                    "label": "Dental Health Center Plan"
+                  },
+                  {
+                    "value": "dentalBlueFreedomPlan",
+                    "label": "Dental Blue Freedom Plan"
+                  },
+                  {
+                    "value": "none",
+                    "label": "None"
+                  }
+                ],
+                "json": "",
+                "url": "",
+                "resource": ""
+              },
+              "dataSrc": "values",
+              "valueProperty": "",
+              "defaultValue": "",
+              "refreshOn": "",
+              "filter": "",
+              "authenticate": false,
+              "template": "<span>{{ item.label }}</span>",
+              "multiple": false,
+              "protected": false,
+              "unique": false,
+              "persistent": true,
+              "validate": {
+                "required": false
+              },
+              "type": "select",
+              "tags": [],
+              "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+              }
+            },
+            {
+              "input": true,
+              "tree": true,
+              "components": [
+                {
+                  "input": true,
+                  "tableView": true,
+                  "inputType": "text",
+                  "inputMask": "",
+                  "label": "Full Name",
+                  "key": "fullName",
+                  "placeholder": "",
+                  "prefix": "",
+                  "suffix": "",
+                  "multiple": false,
+                  "defaultValue": "",
+                  "protected": false,
+                  "unique": false,
+                  "persistent": true,
+                  "validate": {
+                    "required": false,
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "custom": "",
+                    "customPrivate": false
+                  },
+                  "conditional": {
+                    "show": "",
+                    "when": null,
+                    "eq": ""
+                  },
+                  "type": "textfield",
+                  "hideLabel": true,
+                  "tags": []
+                },
+                {
+                  "input": true,
+                  "tableView": true,
+                  "label": "Date of Birth",
+                  "key": "dateofBirth",
+                  "placeholder": "",
+                  "format": "yyyy-MM-dd",
+                  "enableDate": true,
+                  "enableTime": false,
+                  "datepickerMode": "day",
+                  "datePicker": {
+                    "showWeeks": true,
+                    "startingDay": 0,
+                    "initDate": "",
+                    "minMode": "day",
+                    "maxMode": "year",
+                    "yearRange": "20",
+                    "datepickerMode": "day"
+                  },
+                  "timePicker": {
+                    "hourStep": 1,
+                    "minuteStep": 1,
+                    "showMeridian": true,
+                    "readonlyInput": false,
+                    "mousewheel": true,
+                    "arrowkeys": true
+                  },
+                  "protected": false,
+                  "persistent": true,
+                  "validate": {
+                    "required": false,
+                    "custom": ""
+                  },
+                  "type": "datetime",
+                  "hideLabel": true,
+                  "tags": [],
+                  "conditional": {
+                    "show": "",
+                    "when": null,
+                    "eq": ""
+                  }
+                },
+                {
+                  "input": true,
+                  "tableView": true,
+                  "label": "Gender",
+                  "key": "gender1",
+                  "placeholder": "",
+                  "data": {
+                    "values": [
+                      {
+                        "value": "male",
+                        "label": "Male"
+                      },
+                      {
+                        "value": "female",
+                        "label": "Female"
+                      }
+                    ],
+                    "json": "",
+                    "url": "",
+                    "resource": ""
+                  },
+                  "dataSrc": "values",
+                  "valueProperty": "",
+                  "defaultValue": "",
+                  "refreshOn": "",
+                  "filter": "",
+                  "authenticate": false,
+                  "template": "<span>{{ item.label }}</span>",
+                  "multiple": false,
+                  "protected": false,
+                  "unique": false,
+                  "persistent": true,
+                  "validate": {
+                    "required": false
+                  },
+                  "type": "select",
+                  "hideLabel": true,
+                  "tags": [],
+                  "conditional": {
+                    "show": "",
+                    "when": null,
+                    "eq": ""
+                  }
+                },
+                {
+                  "input": true,
+                  "tableView": true,
+                  "inputType": "text",
+                  "inputMask": "999-99-9999",
+                  "label": "Social Security #",
+                  "key": "socialSecurity",
+                  "placeholder": "",
+                  "prefix": "",
+                  "suffix": "",
+                  "multiple": false,
+                  "defaultValue": "",
+                  "protected": false,
+                  "unique": false,
+                  "persistent": true,
+                  "validate": {
+                    "required": false,
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "custom": "",
+                    "customPrivate": false
+                  },
+                  "conditional": {
+                    "show": "",
+                    "when": null,
+                    "eq": ""
+                  },
+                  "type": "textfield",
+                  "hideLabel": true,
+                  "tags": []
+                }
+              ],
+              "tableView": true,
+              "label": "Participants",
+              "key": "participants",
+              "protected": false,
+              "persistent": true,
+              "type": "datagrid",
+              "tags": [],
+              "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+              }
+            }
+          ],
+          "type": "panel",
+          "tags": [],
+          "conditional": {
+            "show": "",
+            "when": null,
+            "eq": ""
+          }
+        },
+        {
+          "conditional": {
+            "eq": "",
+            "when": null,
+            "show": ""
+          },
+          "tags": [],
+          "type": "panel",
+          "components": [
+            {
+              "lockKey": true,
+              "conditional": {
+                "eq": "",
+                "when": null,
+                "show": ""
+              },
+              "tags": [],
+              "type": "select",
+              "validate": {
+                "required": false
+              },
+              "persistent": true,
+              "unique": false,
+              "protected": false,
+              "multiple": false,
+              "template": "<span>{{ item.label }}</span>",
+              "authenticate": false,
+              "filter": "",
+              "refreshOn": "",
+              "defaultValue": "",
+              "valueProperty": "",
+              "dataSrc": "values",
+              "data": {
+                "resource": "",
+                "url": "",
+                "json": "",
+                "values": [
+                  {
+                    "label": "1 x Salary",
+                    "value": "1XSalary"
+                  },
+                  {
+                    "label": "2 x Salary",
+                    "value": "2XSalary"
+                  },
+                  {
+                    "label": "3 x Salary",
+                    "value": "3XSalary"
+                  },
+                  {
+                    "label": "4 x Salary",
+                    "value": "4XSalary"
+                  },
+                  {
+                    "label": "5 x Salary",
+                    "value": "5XSalary"
+                  },
+                  {
+                    "label": "None",
+                    "value": "none"
+                  }
+                ]
+              },
+              "placeholder": "Select an insurance plan",
+              "key": "supplementalPlan",
+              "label": "Supplemental Insurance",
+              "tableView": true,
+              "input": true
+            },
+            {
+              "conditional": {
+                "eq": "",
+                "when": null,
+                "show": ""
+              },
+              "tags": [],
+              "type": "number",
+              "validate": {
+                "custom": "",
+                "multiple": "",
+                "integer": "",
+                "step": "1000",
+                "max": "",
+                "min": "",
+                "required": false
+              },
+              "persistent": true,
+              "protected": false,
+              "defaultValue": 0,
+              "suffix": "USD",
+              "prefix": "$",
+              "placeholder": "Enter an amount",
+              "key": "dependentLifeInsurance",
+              "label": "Dependent Life Insurance",
+              "inputType": "number",
+              "tableView": true,
+              "input": true
+            },
+            {
+              "input": true,
+              "tree": true,
+              "components": [
+                {
+                  "input": true,
+                  "tableView": true,
+                  "inputType": "text",
+                  "inputMask": "",
+                  "label": "Full Name",
+                  "key": "fullName1",
+                  "placeholder": "",
+                  "prefix": "",
+                  "suffix": "",
+                  "multiple": false,
+                  "defaultValue": "",
+                  "protected": false,
+                  "unique": false,
+                  "persistent": true,
+                  "validate": {
+                    "required": false,
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "custom": "",
+                    "customPrivate": false
+                  },
+                  "conditional": {
+                    "show": "",
+                    "when": null,
+                    "eq": ""
+                  },
+                  "type": "textfield",
+                  "hideLabel": true,
+                  "tags": []
+                },
+                {
+                  "input": true,
+                  "tableView": true,
+                  "inputType": "text",
+                  "inputMask": "",
+                  "label": "Relationship",
+                  "key": "relationship",
+                  "placeholder": "",
+                  "prefix": "",
+                  "suffix": "",
+                  "multiple": false,
+                  "defaultValue": "",
+                  "protected": false,
+                  "unique": false,
+                  "persistent": true,
+                  "validate": {
+                    "required": false,
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "custom": "",
+                    "customPrivate": false
+                  },
+                  "conditional": {
+                    "show": "",
+                    "when": null,
+                    "eq": ""
+                  },
+                  "type": "textfield",
+                  "hideLabel": true,
+                  "tags": [],
+                  "isNew": false
+                },
+                {
+                  "input": true,
+                  "tableView": true,
+                  "inputType": "number",
+                  "label": "Percent of Benefit",
+                  "key": "percentofBenefit",
+                  "placeholder": "",
+                  "prefix": "",
+                  "suffix": "%",
+                  "defaultValue": 0,
+                  "protected": false,
+                  "persistent": true,
+                  "validate": {
+                    "required": false,
+                    "min": "",
+                    "max": "",
+                    "step": "1",
+                    "integer": "",
+                    "multiple": "",
+                    "custom": ""
+                  },
+                  "type": "number",
+                  "hideLabel": true,
+                  "tags": [],
+                  "conditional": {
+                    "show": "",
+                    "when": null,
+                    "eq": ""
+                  }
+                }
+              ],
+              "tableView": true,
+              "label": "Beneficiaries",
+              "key": "beneficiaries",
+              "protected": false,
+              "persistent": true,
+              "type": "datagrid",
+              "tags": [],
+              "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+              }
+            }
+          ],
+          "theme": "info",
+          "title": "Life Insurance",
+          "input": false
+        },
+        {
+          "conditional": {
+            "eq": "",
+            "when": null,
+            "show": ""
+          },
+          "tags": [],
+          "type": "panel",
+          "components": [
+            {
+              "conditional": {
+                "eq": "",
+                "when": null,
+                "show": ""
+              },
+              "tags": [],
+              "type": "content",
+              "html": "<p>I certify below that I have completed this form to the best of my knowledge, and I understand the following:</p>\n\n<ul>\n\t<li>My coverage elections on this form cannot be revoked or modified during the year unless I have a qualifying change in status as defined by the IRS; I may, however, change my coverage elections during the next open enrollment period.</li>\n\t<li>My pay will be reduced by the amount of any required contributions noted for the coverages elected where the contributions are pre-tax.</li>\n\t<li>I acknowledge receiving a copy of the Faculty &amp; Staff Benefits Handbook for my employee classification and reading the descriptions of the benefit plans in which I am enrolling. I also understand any limitations or restrictions on coverage or benefits under these benefit plans as described in the Faculty &amp; Staff Benefits Handbook. If I have enrolled in a Health Care or Dependent Care Flexible Spending Account, I agree to the provisions printed on the reverse side of this form.</li>\n</ul>\n\n<p>I give permission to the health plan I select to obtain and/or examine my medical records (and/or those of my dependent(s)) from any health care practitioner or institution in which care is provided while a member, to the extent permitted by law; and I (we) understand the benefits and agree to the provisions as described in the Plan document.</p>\n",
+              "input": false
+            },
+            {
+              "conditional": {
+                "eq": "",
+                "when": null,
+                "show": ""
+              },
+              "tags": [],
+              "hideLabel": true,
+              "type": "signature",
+              "validate": {
+                "required": false
+              },
+              "persistent": true,
+              "protected": false,
+              "maxWidth": "2.5",
+              "minWidth": "0.5",
+              "backgroundColor": "rgb(245,245,235)",
+              "penColor": "black",
+              "height": "150px",
+              "width": "100%",
+              "footer": "Sign above",
+              "placeholder": "",
+              "key": "signature1",
+              "label": "Signature",
+              "tableView": true,
+              "input": true
+            }
+          ],
+          "theme": "default",
+          "title": "Signature",
+          "input": false
+        },
+        {
+          "input": true,
+          "label": "Submit",
+          "tableView": false,
+          "key": "submit",
+          "size": "md",
+          "leftIcon": "",
+          "rightIcon": "",
+          "block": false,
+          "action": "submit",
+          "disableOnInvalid": false,
+          "theme": "primary",
+          "type": "button"
+        }
+      ],
+      "access": [
+        {
+          "type": "read_all",
+          "roles": [
+            "administrator",
+            "authenticated",
+            "anonymous"
+          ]
+        }
+      ],
+      "submissionAccess": [
+        {
+          "type": "create_all",
+          "roles": []
+        },
+        {
+          "type": "read_all",
+          "roles": []
+        },
+        {
+          "type": "update_all",
+          "roles": []
+        },
+        {
+          "type": "delete_all",
+          "roles": []
+        },
+        {
+          "type": "create_own",
+          "roles": [
+            "authenticated"
+          ]
+        },
+        {
+          "type": "read_own",
+          "roles": [
+            "authenticated"
+          ]
+        },
+        {
+          "type": "update_own",
+          "roles": [
+            "authenticated"
+          ]
+        },
+        {
+          "type": "delete_own",
+          "roles": [
+            "authenticated"
+          ]
+        }
+      ]
+    },
+    "employmentApplication": {
+      "title": "Employment Application",
+      "type": "form",
+      "name": "employmentApplication",
+      "path": "application",
+      "display": "form",
+      "tags": [
+        "common"
+      ],
+      "components": [
+        {
+          "conditional": {
+            "eq": "",
+            "when": null,
+            "show": ""
+          },
+          "tags": [],
+          "type": "panel",
+          "components": [
+            {
+              "conditional": {
+                "eq": "",
+                "when": null,
+                "show": ""
+              },
+              "tags": [],
+              "type": "columns",
+              "columns": [
+                {
+                  "components": [
+                    {
+                      "tags": [],
+                      "type": "textfield",
+                      "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                      },
+                      "validate": {
+                        "customPrivate": false,
+                        "custom": "",
+                        "pattern": "",
+                        "maxLength": "",
+                        "minLength": "",
+                        "required": false
+                      },
+                      "persistent": true,
+                      "unique": false,
+                      "protected": false,
+                      "defaultValue": "",
+                      "multiple": false,
+                      "suffix": "",
+                      "prefix": "",
+                      "placeholder": "Enter your first name",
+                      "key": "firstName",
+                      "label": "First Name",
+                      "inputMask": "",
+                      "inputType": "text",
+                      "tableView": true,
+                      "input": true
+                    },
+                    {
+                      "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                      },
+                      "tags": [],
+                      "type": "address",
+                      "validate": {
+                        "required": false
+                      },
+                      "map": {
+                        "key": "",
+                        "region": ""
+                      },
+                      "persistent": true,
+                      "unique": false,
+                      "protected": false,
+                      "multiple": false,
+                      "placeholder": "Enter your home address",
+                      "key": "homeAddress",
+                      "label": "Home Address",
+                      "tableView": true,
+                      "input": true
+                    },
+                    {
+                      "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                      },
+                      "tags": [],
+                      "type": "email",
+                      "kickbox": {
+                        "enabled": false
+                      },
+                      "persistent": true,
+                      "unique": false,
+                      "protected": false,
+                      "defaultValue": "",
+                      "suffix": "",
+                      "prefix": "",
+                      "placeholder": "Enter your email address",
+                      "key": "emailAddress",
+                      "label": "Email Address",
+                      "inputType": "email",
+                      "tableView": true,
+                      "input": true
+                    }
+                  ]
+                },
+                {
+                  "components": [
+                    {
+                      "tags": [],
+                      "type": "textfield",
+                      "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                      },
+                      "validate": {
+                        "customPrivate": false,
+                        "custom": "",
+                        "pattern": "",
+                        "maxLength": "",
+                        "minLength": "",
+                        "required": false
+                      },
+                      "persistent": true,
+                      "unique": false,
+                      "protected": false,
+                      "defaultValue": "",
+                      "multiple": false,
+                      "suffix": "",
+                      "prefix": "",
+                      "placeholder": "Enter your last name",
+                      "key": "lastName",
+                      "label": "Last Name",
+                      "inputMask": "",
+                      "inputType": "text",
+                      "tableView": true,
+                      "input": true
+                    },
+                    {
+                      "conditional": {
+                        "eq": "",
+                        "when": null,
+                        "show": ""
+                      },
+                      "tags": [],
+                      "type": "phoneNumber",
+                      "validate": {
+                        "required": false
+                      },
+                      "defaultValue": "",
+                      "persistent": true,
+                      "unique": false,
+                      "protected": false,
+                      "multiple": false,
+                      "suffix": "",
+                      "prefix": "",
+                      "placeholder": "Enter your phone number",
+                      "key": "phoneNumber",
+                      "label": "Phone Number",
+                      "inputMask": "(999) 999-9999",
+                      "tableView": true,
+                      "input": true
+                    }
+                  ]
+                }
+              ],
+              "input": false
+            }
+          ],
+          "theme": "primary",
+          "title": "Personal Information",
+          "input": false
+        },
+        {
+          "conditional": {
+            "eq": "",
+            "when": null,
+            "show": ""
+          },
+          "tags": [],
+          "type": "panel",
+          "components": [
+            {
+              "lockKey": true,
+              "tags": [],
+              "type": "textfield",
+              "conditional": {
+                "eq": "",
+                "when": null,
+                "show": ""
+              },
+              "validate": {
+                "customPrivate": false,
+                "custom": "",
+                "pattern": "",
+                "maxLength": "",
+                "minLength": "",
+                "required": false
+              },
+              "persistent": true,
+              "unique": false,
+              "protected": false,
+              "defaultValue": "",
+              "multiple": false,
+              "suffix": "",
+              "prefix": "",
+              "placeholder": "",
+              "key": "title",
+              "label": "Title of position you are applying for",
+              "inputMask": "",
+              "inputType": "text",
+              "tableView": true,
+              "input": true
+            },
+            {
+              "conditional": {
+                "eq": "",
+                "when": null,
+                "show": ""
+              },
+              "tags": [],
+              "type": "select",
+              "validate": {
+                "required": false
+              },
+              "persistent": true,
+              "unique": false,
+              "protected": false,
+              "multiple": false,
+              "template": "<span>{{ item.label }}</span>",
+              "authenticate": false,
+              "filter": "",
+              "refreshOn": "",
+              "defaultValue": "",
+              "valueProperty": "",
+              "dataSrc": "values",
+              "data": {
+                "resource": "",
+                "url": "",
+                "json": "",
+                "values": [
+                  {
+                    "label": "Human Resources",
+                    "value": "humanResources"
+                  },
+                  {
+                    "label": "IT",
+                    "value": "it"
+                  },
+                  {
+                    "label": "Management",
+                    "value": "management"
+                  },
+                  {
+                    "label": "Sales",
+                    "value": "sales"
+                  },
+                  {
+                    "label": "Support",
+                    "value": "support"
+                  },
+                  {
+                    "label": "Quality Assurance",
+                    "value": "qualityAssurance"
+                  }
+                ]
+              },
+              "placeholder": "Select the department",
+              "key": "department",
+              "label": "Department",
+              "tableView": true,
+              "input": true
+            }
+          ],
+          "theme": "success",
+          "title": "Position Information",
+          "input": false
+        },
+        {
+          "conditional": {
+            "eq": "",
+            "when": null,
+            "show": ""
+          },
+          "tags": [],
+          "type": "panel",
+          "components": [
+            {
+              "conditional": {
+                "eq": "",
+                "when": null,
+                "show": ""
+              },
+              "tags": [],
+              "type": "datagrid",
+              "persistent": true,
+              "protected": false,
+              "key": "previousExperience",
+              "label": "Previous Experience",
+              "tableView": true,
+              "components": [
+                {
+                  "isNew": false,
+                  "tags": [],
+                  "hideLabel": true,
+                  "type": "textfield",
+                  "conditional": {
+                    "eq": "",
+                    "when": null,
+                    "show": ""
+                  },
+                  "validate": {
+                    "customPrivate": false,
+                    "custom": "",
+                    "pattern": "",
+                    "maxLength": "",
+                    "minLength": "",
+                    "required": false
+                  },
+                  "persistent": true,
+                  "unique": false,
+                  "protected": false,
+                  "defaultValue": "",
+                  "multiple": false,
+                  "suffix": "",
+                  "prefix": "",
+                  "placeholder": "",
+                  "key": "title1",
+                  "label": "Title",
+                  "inputMask": "",
+                  "inputType": "text",
+                  "tableView": true,
+                  "input": true
+                },
+                {
+                  "tags": [],
+                  "hideLabel": true,
+                  "type": "textfield",
+                  "conditional": {
+                    "eq": "",
+                    "when": null,
+                    "show": ""
+                  },
+                  "validate": {
+                    "customPrivate": false,
+                    "custom": "",
+                    "pattern": "",
+                    "maxLength": "",
+                    "minLength": "",
+                    "required": false
+                  },
+                  "persistent": true,
+                  "unique": false,
+                  "protected": false,
+                  "defaultValue": "",
+                  "multiple": false,
+                  "suffix": "",
+                  "prefix": "",
+                  "placeholder": "",
+                  "key": "company",
+                  "label": "Company",
+                  "inputMask": "",
+                  "inputType": "text",
+                  "tableView": true,
+                  "input": true
+                },
+                {
+                  "conditional": {
+                    "eq": "",
+                    "when": null,
+                    "show": ""
+                  },
+                  "tags": [],
+                  "hideLabel": true,
+                  "type": "datetime",
+                  "validate": {
+                    "custom": "",
+                    "required": false
+                  },
+                  "persistent": true,
+                  "protected": false,
+                  "timePicker": {
+                    "arrowkeys": true,
+                    "mousewheel": true,
+                    "readonlyInput": false,
+                    "showMeridian": true,
+                    "minuteStep": 1,
+                    "hourStep": 1
+                  },
+                  "datePicker": {
+                    "datepickerMode": "day",
+                    "yearRange": "20",
+                    "maxMode": "year",
+                    "minMode": "month",
+                    "initDate": "",
+                    "startingDay": 0,
+                    "showWeeks": true
+                  },
+                  "datepickerMode": "month",
+                  "enableTime": false,
+                  "enableDate": true,
+                  "format": "yyyy-MM-dd",
+                  "placeholder": "",
+                  "key": "from",
+                  "label": "From",
+                  "tableView": true,
+                  "input": true
+                },
+                {
+                  "conditional": {
+                    "eq": "",
+                    "when": null,
+                    "show": ""
+                  },
+                  "tags": [],
+                  "hideLabel": true,
+                  "type": "datetime",
+                  "validate": {
+                    "custom": "",
+                    "required": false
+                  },
+                  "persistent": true,
+                  "protected": false,
+                  "timePicker": {
+                    "arrowkeys": true,
+                    "mousewheel": true,
+                    "readonlyInput": false,
+                    "showMeridian": true,
+                    "minuteStep": 1,
+                    "hourStep": 1
+                  },
+                  "datePicker": {
+                    "datepickerMode": "day",
+                    "yearRange": "20",
+                    "maxMode": "year",
+                    "minMode": "month",
+                    "initDate": "",
+                    "startingDay": 0,
+                    "showWeeks": true
+                  },
+                  "datepickerMode": "day",
+                  "enableTime": false,
+                  "enableDate": true,
+                  "format": "yyyy-MM-dd",
+                  "placeholder": "",
+                  "key": "to",
+                  "label": "To",
+                  "tableView": true,
+                  "input": true
+                }
+              ],
+              "tree": true,
+              "input": true
+            }
+          ],
+          "theme": "default",
+          "title": "Previous Experience",
+          "input": false
+        },
+        {
+          "input": false,
+          "title": "References",
+          "theme": "warning",
+          "components": [
+            {
+              "input": true,
+              "tree": true,
+              "components": [
+                {
+                  "input": true,
+                  "tableView": true,
+                  "inputType": "text",
+                  "inputMask": "",
+                  "label": "Full Name",
+                  "key": "fullName",
+                  "placeholder": "",
+                  "prefix": "",
+                  "suffix": "",
+                  "multiple": false,
+                  "defaultValue": "",
+                  "protected": false,
+                  "unique": false,
+                  "persistent": true,
+                  "validate": {
+                    "required": false,
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "custom": "",
+                    "customPrivate": false
+                  },
+                  "conditional": {
+                    "show": "",
+                    "when": null,
+                    "eq": ""
+                  },
+                  "type": "textfield",
+                  "hideLabel": true,
+                  "tags": []
+                },
+                {
+                  "input": true,
+                  "tableView": true,
+                  "inputType": "text",
+                  "inputMask": "",
+                  "label": "Relationship",
+                  "key": "relationship",
+                  "placeholder": "",
+                  "prefix": "",
+                  "suffix": "",
+                  "multiple": false,
+                  "defaultValue": "",
+                  "protected": false,
+                  "unique": false,
+                  "persistent": true,
+                  "validate": {
+                    "required": false,
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "custom": "",
+                    "customPrivate": false
+                  },
+                  "conditional": {
+                    "show": "",
+                    "when": null,
+                    "eq": ""
+                  },
+                  "type": "textfield",
+                  "hideLabel": true,
+                  "tags": []
+                },
+                {
+                  "input": true,
+                  "tableView": true,
+                  "inputMask": "(999) 999-9999",
+                  "label": "Phone Number",
+                  "key": "phoneNumber1",
+                  "placeholder": "",
+                  "prefix": "",
+                  "suffix": "",
+                  "multiple": false,
+                  "protected": false,
+                  "unique": false,
+                  "persistent": true,
+                  "defaultValue": "",
+                  "validate": {
+                    "required": false
+                  },
+                  "type": "phoneNumber",
+                  "hideLabel": true,
+                  "tags": [],
+                  "conditional": {
+                    "show": "",
+                    "when": null,
+                    "eq": ""
+                  }
+                },
+                {
+                  "input": true,
+                  "tableView": true,
+                  "inputType": "email",
+                  "label": "Email",
+                  "key": "email",
+                  "placeholder": "",
+                  "prefix": "",
+                  "suffix": "",
+                  "defaultValue": "",
+                  "protected": false,
+                  "unique": false,
+                  "persistent": true,
+                  "kickbox": {
+                    "enabled": false
+                  },
+                  "type": "email",
+                  "hideLabel": true,
+                  "tags": [],
+                  "conditional": {
+                    "show": "",
+                    "when": null,
+                    "eq": ""
+                  }
+                }
+              ],
+              "tableView": true,
+              "label": "References",
+              "key": "references",
+              "protected": false,
+              "persistent": true,
+              "type": "datagrid",
+              "tags": [],
+              "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+              }
+            }
+          ],
+          "type": "panel",
+          "tags": [],
+          "conditional": {
+            "show": "",
+            "when": null,
+            "eq": ""
+          }
+        },
+        {
+          "conditional": {
+            "eq": "",
+            "when": null,
+            "show": ""
+          },
+          "tags": [],
+          "type": "panel",
+          "components": [
+            {
+              "tags": [],
+              "type": "textfield",
+              "conditional": {
+                "eq": "",
+                "when": null,
+                "show": ""
+              },
+              "validate": {
+                "customPrivate": false,
+                "custom": "",
+                "pattern": "",
+                "maxLength": "",
+                "minLength": "",
+                "required": false
+              },
+              "persistent": true,
+              "unique": false,
+              "protected": false,
+              "defaultValue": "",
+              "multiple": false,
+              "suffix": "",
+              "prefix": "",
+              "placeholder": "",
+              "key": "howdidyouhearaboutthisposition",
+              "label": "How did you hear about this position?",
+              "inputMask": "",
+              "inputType": "text",
+              "tableView": true,
+              "input": true
+            },
+            {
+              "conditional": {
+                "eq": "",
+                "when": null,
+                "show": ""
+              },
+              "tags": [],
+              "type": "textarea",
+              "validate": {
+                "custom": "",
+                "pattern": "",
+                "maxLength": "",
+                "minLength": "",
+                "required": false
+              },
+              "wysiwyg": false,
+              "persistent": true,
+              "protected": false,
+              "defaultValue": "",
+              "multiple": false,
+              "rows": 3,
+              "suffix": "",
+              "prefix": "",
+              "placeholder": "",
+              "key": "whyshouldwehireyou",
+              "label": "Why should we hire you?",
+              "tableView": true,
+              "input": true
+            },
+            {
+              "storage": "s3",
+              "conditional": {
+                "eq": "",
+                "when": null,
+                "show": ""
+              },
+              "tags": [],
+              "type": "file",
+              "persistent": true,
+              "protected": false,
+              "defaultValue": "",
+              "multiple": false,
+              "placeholder": "",
+              "key": "resume",
+              "label": "Resume",
+              "tableView": true,
+              "input": true
+            }
+          ],
+          "theme": "info",
+          "title": "Other Information",
+          "input": false
+        },
+        {
+          "type": "button",
+          "theme": "primary",
+          "disableOnInvalid": false,
+          "action": "submit",
+          "block": false,
+          "rightIcon": "",
+          "leftIcon": "",
+          "size": "md",
+          "key": "submit",
+          "tableView": false,
+          "label": "Submit",
+          "input": true
+        }
+      ],
+      "access": [
+        {
+          "type": "read_all",
+          "roles": [
+            "administrator",
+            "authenticated",
+            "anonymous"
+          ]
+        }
+      ],
+      "submissionAccess": [
+        {
+          "type": "create_all",
+          "roles": []
+        },
+        {
+          "type": "read_all",
+          "roles": []
+        },
+        {
+          "type": "update_all",
+          "roles": []
+        },
+        {
+          "type": "delete_all",
+          "roles": []
+        },
+        {
+          "type": "create_own",
+          "roles": [
+            "anonymous",
+            "authenticated"
+          ]
+        },
+        {
+          "type": "read_own",
+          "roles": [
+            "anonymous",
+            "authenticated"
+          ]
+        },
+        {
+          "type": "update_own",
+          "roles": [
+            "anonymous",
+            "authenticated"
+          ]
+        },
+        {
+          "type": "delete_own",
+          "roles": [
+            "anonymous",
+            "authenticated"
+          ]
+        }
+      ]
+    }
+  },
+  "actions": {
+    "userUserSave": {
+      "title": "Save Submission",
+      "name": "save",
+      "form": "user",
+      "priority": 10,
+      "method": [
+        "create",
+        "update"
+      ],
+      "handler": [
+        "before"
+      ]
+    },
+    "userAuthenticatedRole": {
+      "title": "Role Assignment",
+      "name": "role",
+      "form": "user",
+      "settings": {
+        "association": "new",
+        "type": "add",
+        "role": "authenticated"
+      },
+      "priority": 1,
+      "method": [
+        "create"
+      ],
+      "handler": [
+        "after"
+      ]
+    },
+    "adminAdminSave": {
+      "title": "Save Submission",
+      "name": "save",
+      "form": "admin",
+      "priority": 10,
+      "method": [
+        "create",
+        "update"
+      ],
+      "handler": [
+        "before"
+      ]
+    },
+    "adminAdminRole": {
+      "title": "Role Assignment",
+      "name": "role",
+      "form": "admin",
+      "settings": {
+        "association": "new",
+        "type": "add",
+        "role": "administrator"
+      },
+      "priority": 1,
+      "method": [
+        "create"
+      ],
+      "handler": [
+        "after"
+      ]
+    },
+    "userLoginUserLogin": {
+      "title": "Login",
+      "name": "login",
+      "form": "userLogin",
+      "settings": {
+        "password": "password",
+        "username": "email",
+        "resources": [
+          "user",
+          "admin"
+        ]
+      },
+      "priority": 2,
+      "method": [
+        "create"
+      ],
+      "handler": [
+        "before"
+      ]
+    },
+    "userRegisterUserRegisterSave": {
+      "title": "Save Submission",
+      "name": "save",
+      "form": "userRegister",
+      "settings": {
+        "fields": {
+          "password": "password",
+          "email": "email"
+        },
+        "resource": "user"
+      },
+      "priority": 11,
+      "method": [
+        "create"
+      ],
+      "handler": [
+        "before"
+      ]
+    },
+    "userRegisterUserRegisterLogin": {
+      "title": "Login",
+      "name": "login",
+      "form": "userRegister",
+      "settings": {
+        "password": "password",
+        "username": "email",
+        "resources": [
+          "user"
+        ]
+      },
+      "priority": 2,
+      "method": [
+        "create"
+      ],
+      "handler": [
+        "before"
+      ]
+    },
+    "benefitsEnrollmentSave": {
+      "title": "Save Submission",
+      "name": "save",
+      "form": "benefitsEnrollment",
+      "priority": 10,
+      "method": [
+        "create",
+        "update"
+      ],
+      "handler": [
+        "before"
+      ]
+    },
+    "employmentApplicationSave": {
+      "title": "Save Submission",
+      "name": "save",
+      "form": "employmentApplication",
+      "priority": 10,
+      "method": [
+        "create",
+        "update"
+      ],
+      "handler": [
+        "before"
+      ]
+    }
+  },
+  "resources": {
+    "user": {
+      "title": "User",
+      "type": "resource",
+      "name": "user",
+      "path": "user",
+      "tags": [],
+      "components": [
+        {
+          "input": true,
+          "tableView": true,
+          "inputType": "email",
+          "label": "Email",
+          "key": "email",
+          "placeholder": "Enter your email address",
+          "prefix": "",
+          "suffix": "",
+          "defaultValue": "",
+          "protected": false,
+          "unique": false,
+          "persistent": true,
+          "type": "email"
+        },
+        {
+          "input": true,
+          "tableView": false,
+          "inputType": "password",
+          "label": "Password",
+          "key": "password",
+          "placeholder": "Enter your password.",
+          "prefix": "",
+          "suffix": "",
+          "protected": true,
+          "persistent": true,
+          "type": "password"
+        },
+        {
+          "input": true,
+          "label": "Submit",
+          "tableView": false,
+          "key": "submit",
+          "size": "md",
+          "leftIcon": "",
+          "rightIcon": "",
+          "block": false,
+          "action": "submit",
+          "disableOnInvalid": true,
+          "theme": "primary",
+          "type": "button"
+        }
+      ],
+      "access": [
+        {
+          "type": "read_all",
+          "roles": [
+            "anonymous",
+            "authenticated",
+            "administrator"
+          ]
+        }
+      ],
+      "submissionAccess": [
+        {
+          "type": "create_all",
+          "roles": [
+            "administrator"
+          ]
+        },
+        {
+          "type": "read_all",
+          "roles": [
+            "administrator"
+          ]
+        },
+        {
+          "type": "update_all",
+          "roles": [
+            "administrator"
+          ]
+        },
+        {
+          "type": "delete_all",
+          "roles": [
+            "administrator"
+          ]
+        },
+        {
+          "type": "create_own",
+          "roles": []
+        },
+        {
+          "type": "read_own",
+          "roles": []
+        },
+        {
+          "type": "update_own",
+          "roles": []
+        },
+        {
+          "type": "delete_own",
+          "roles": []
+        }
+      ]
+    },
+    "admin": {
+      "title": "Admin",
+      "type": "resource",
+      "name": "admin",
+      "path": "admin",
+      "tags": [],
+      "components": [
+        {
+          "input": true,
+          "tableView": true,
+          "inputType": "email",
+          "label": "Email",
+          "key": "email",
+          "placeholder": "Enter your email address",
+          "prefix": "",
+          "suffix": "",
+          "defaultValue": "",
+          "protected": false,
+          "unique": false,
+          "persistent": true,
+          "type": "email"
+        },
+        {
+          "input": true,
+          "tableView": false,
+          "inputType": "password",
+          "label": "Password",
+          "key": "password",
+          "placeholder": "Enter your password.",
+          "prefix": "",
+          "suffix": "",
+          "protected": true,
+          "persistent": true,
+          "type": "password"
+        },
+        {
+          "input": true,
+          "label": "Submit",
+          "tableView": false,
+          "key": "submit",
+          "size": "md",
+          "leftIcon": "",
+          "rightIcon": "",
+          "block": false,
+          "action": "submit",
+          "disableOnInvalid": true,
+          "theme": "primary",
+          "type": "button"
+        }
+      ],
+      "access": [
+        {
+          "type": "read_all",
+          "roles": [
+            "anonymous",
+            "authenticated",
+            "administrator"
+          ]
+        }
+      ],
+      "submissionAccess": [
+        {
+          "type": "create_all",
+          "roles": [
+            "administrator"
+          ]
+        },
+        {
+          "type": "read_all",
+          "roles": [
+            "administrator"
+          ]
+        },
+        {
+          "type": "update_all",
+          "roles": [
+            "administrator"
+          ]
+        },
+        {
+          "type": "delete_all",
+          "roles": [
+            "administrator"
+          ]
+        },
+        {
+          "type": "create_own",
+          "roles": []
+        },
+        {
+          "type": "read_own",
+          "roles": []
+        },
+        {
+          "type": "update_own",
+          "roles": []
+        },
+        {
+          "type": "delete_own",
+          "roles": []
+        }
+      ]
+    }
+  }
+}

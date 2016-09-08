@@ -1,0 +1,30 @@
+@import "bower_components/bootswatch/yeti/_variables.scss";
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/bootswatch/yeti/_bootswatch.scss";
+$fa-font-path: "/bower_components/font-awesome/fonts";
+@import "bower_components/font-awesome/scss/font-awesome";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.nav-tabs {
+  margin-bottom: 10px;
+}
+
+a:focus {
+  outline: none;
+}
+
+.form-field-type-icons {
+  i {
+    margin: 5px;
+  }
+}
