@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Employee Information</h3>
+      </div>
+      <div class="panel-body">
+        <formio-submission form="employee.form" submission="employee.resource"></formio-submission>
+      </div>
+    </div>
+  </div>
+  <div class="col col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Map</h3>
+      </div>
+      <div class="panel-body">
+        <map zoom="8" center="{{ position }}"> <marker position="{{ position }}" title="{{ employee.resource.data.address.formatted_address }}" visible></marker></map>
+      </div>
+    </div>
+  </div>
+</div>

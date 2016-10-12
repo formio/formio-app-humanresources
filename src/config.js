@@ -17,9 +17,9 @@ angular.module('formioApp').constant('AppConfig', {
     userLoginForm: APP_URL + '/user/login'
   },
   resources: {
-    user: {
-      form: APP_URL + '/user',
-      resource: 'UserResource'
+    employee: {
+      form: APP_URL + '/employee',
+      resource: 'EmployeeResource'
     }
   }
 });
