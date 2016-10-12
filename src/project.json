@@ -1615,10 +1615,10 @@
     }
   },
   "actions": {
-    "userUserUserSave": {
+    "employeeUserUserSave": {
       "title": "Save Submission",
       "name": "save",
-      "form": "user",
+      "form": "employee",
       "priority": 10,
       "method": [
         "create",
@@ -1628,10 +1628,10 @@
         "before"
       ]
     },
-    "userUserAuthenticatedRole": {
+    "employeeUserAuthenticatedRole": {
       "title": "Role Assignment",
       "name": "role",
-      "form": "user",
+      "form": "employee",
       "settings": {
         "role": "authenticated",
         "type": "add",
@@ -1687,7 +1687,7 @@
       },
       "settings": {
         "resources": [
-          "user",
+          "employee",
           "admin"
         ],
         "username": "email",
@@ -1832,7 +1832,7 @@
         }
       ]
     },
-    "user": {
+    "employee": {
       "title": "Employee",
       "type": "resource",
       "name": "employee",
