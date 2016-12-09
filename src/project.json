@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "A Human Resources Portal",
   "preview": {
-    "url": "https://app.form.io/formio-app-humanresources/dist",
+    "url": "https://formio.github.io/formio-app-humanresources/dist/",
     "repo": "https://github.com/formio/formio-app-humanresources"
   },
   "roles": {
