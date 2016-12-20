@@ -45,6 +45,11 @@
 
     // Register the form builder provider.
     FormioFormBuilderProvider.register('', AppConfig.appUrl, {
+      templates: {
+        submission: {
+          view: 'views/form/submission/view.html'
+        }
+      },
       controllers: {
         form: {
           view: [
