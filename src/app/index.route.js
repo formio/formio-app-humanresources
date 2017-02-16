@@ -1,3 +1,4 @@
+/* globals location */
 (function() {
   'use strict';
   angular
@@ -25,6 +26,55 @@
         abstract: true,
         url: '/users',
         templateUrl: 'views/users.html'
+      })
+      .state('auth.sendreset', {
+        url: '/sendreset',
+        templateUrl: 'views/user/sendreset.html',
+        controller: ['$scope', function($scope) {
+          $scope.submitted = false;
+          $scope.submission = {data: {applicationUrl: location.origin}};
+          $scope.$on('formSubmission', function() {
+            $scope.submitted = true;
+          });
+        }]
+      })
+      .state('resetpass', {
+        url: '/resetpass',
+        templateUrl: 'views/user/resetpass.html',
+        controller: [
+          '$scope',
+          '$state',
+          'Formio',
+          '$rootScope',
+          'AppConfig',
+          function(
+            $scope,
+            $state,
+            Formio,
+            $rootScope,
+            AppConfig
+          ) {
+            $scope.form = null;
+            (new Formio(AppConfig.forms.resetPassForm)).loadForm().then(function(form) {
+              $scope.form = form;
+            });
+
+            // Ensure the user is fully loaded.
+            $rootScope.whenReady.then(function() {
+              $scope.$on('formSubmission', function(event, submission) {
+
+                // Set the logged in user's password.
+                $rootScope.user.data.password = submission.data.password;
+
+                // Now save the user back to the API.
+                (new Formio(AppConfig.resources.employee.form)).saveSubmission($rootScope.user).then(function() {
+
+                  // Go to the home state after they reset their password.
+                  $state.go('home');
+                });
+              });
+            });
+          }]
       });
 
     // Register all of the resources.

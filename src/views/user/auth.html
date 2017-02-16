@@ -20,5 +20,9 @@
         </div>
       </div>
     </div>
+    <div class="panel-footer">
+      <a ui-sref="auth.sendreset()" ng-if="isActive('auth.login')">Forgot your password? Click here.</a>
+      <a ui-sref="auth.login()" ng-if="isActive('auth.sendreset')">Login</a>
+    </div>
   </div>
 </div>

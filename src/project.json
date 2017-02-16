@@ -1,22 +1,18 @@
 {
-  "title": "Human Resources",
+  "title": "Human Resources Portal",
   "version": "2.0.0",
-  "description": "A Human Resources Portal",
-  "preview": {
-    "url": "https://formio.github.io/formio-app-humanresources/dist/",
-    "repo": "https://github.com/formio/formio-app-humanresources"
-  },
+  "description": "A self-service HR portal for managing Employees forms and submissions.",
   "roles": {
-    "authenticated": {
-      "title": "Authenticated",
-      "description": "A role for Authenticated Users.",
-      "admin": false,
-      "default": false
-    },
     "administrator": {
       "title": "Administrator",
       "description": "A role for Administrative Users.",
       "admin": true,
+      "default": false
+    },
+    "authenticated": {
+      "title": "Authenticated",
+      "description": "A role for Authenticated Users.",
+      "admin": false,
       "default": false
     },
     "anonymous": {
@@ -122,9 +118,9 @@
             ],
             "json": "",
             "url": "",
-            "resource": "57fe58e04b52c7007a048ddb",
+            "resource": "employee",
             "custom": "",
-            "project": "57fe58e04b52c7007a048dd7"
+            "project": "project"
           },
           "dataSrc": "resource",
           "valueProperty": "",
@@ -1612,40 +1608,264 @@
           "roles": []
         }
       ]
+    },
+    "sendReset": {
+      "title": "Send Reset",
+      "type": "form",
+      "name": "sendReset",
+      "path": "sendreset",
+      "display": "form",
+      "tags": [],
+      "components": [
+        {
+          "conditional": {
+            "eq": "",
+            "when": null,
+            "show": ""
+          },
+          "tags": [],
+          "type": "hidden",
+          "persistent": true,
+          "unique": false,
+          "protected": false,
+          "label": "Application URL",
+          "key": "applicationUrl",
+          "tableView": true,
+          "input": true
+        },
+        {
+          "validate": {
+            "required": true
+          },
+          "conditional": {
+            "eq": "",
+            "when": null,
+            "show": ""
+          },
+          "tags": [],
+          "type": "email",
+          "kickbox": {
+            "enabled": false
+          },
+          "clearOnHide": true,
+          "persistent": true,
+          "unique": false,
+          "protected": false,
+          "defaultValue": "",
+          "suffix": "",
+          "prefix": "",
+          "placeholder": "Enter your email address",
+          "key": "email",
+          "label": "Email",
+          "inputType": "email",
+          "tableView": true,
+          "input": true
+        },
+        {
+          "conditional": {
+            "eq": "",
+            "when": null,
+            "show": ""
+          },
+          "tags": [],
+          "type": "button",
+          "theme": "primary",
+          "disableOnInvalid": false,
+          "action": "submit",
+          "block": false,
+          "rightIcon": "",
+          "leftIcon": "",
+          "size": "md",
+          "key": "submit",
+          "tableView": false,
+          "label": "Send Email with Reset Password Link",
+          "input": true
+        }
+      ],
+      "access": [
+        {
+          "type": "create_all",
+          "roles": []
+        },
+        {
+          "type": "read_all",
+          "roles": [
+            "administrator",
+            "authenticated",
+            "anonymous"
+          ]
+        },
+        {
+          "type": "update_all",
+          "roles": []
+        },
+        {
+          "type": "delete_all",
+          "roles": []
+        },
+        {
+          "type": "create_own",
+          "roles": []
+        },
+        {
+          "type": "read_own",
+          "roles": []
+        },
+        {
+          "type": "update_own",
+          "roles": []
+        },
+        {
+          "type": "delete_own",
+          "roles": []
+        },
+        {
+          "type": "team_read",
+          "roles": []
+        },
+        {
+          "type": "team_write",
+          "roles": []
+        },
+        {
+          "type": "team_admin",
+          "roles": []
+        }
+      ],
+      "submissionAccess": [
+        {
+          "type": "create_all",
+          "roles": []
+        },
+        {
+          "type": "read_all",
+          "roles": []
+        },
+        {
+          "type": "update_all",
+          "roles": []
+        },
+        {
+          "type": "delete_all",
+          "roles": []
+        },
+        {
+          "type": "create_own",
+          "roles": [
+            "anonymous"
+          ]
+        },
+        {
+          "type": "read_own",
+          "roles": []
+        },
+        {
+          "type": "update_own",
+          "roles": []
+        },
+        {
+          "type": "delete_own",
+          "roles": []
+        },
+        {
+          "type": "team_read",
+          "roles": []
+        },
+        {
+          "type": "team_write",
+          "roles": []
+        },
+        {
+          "type": "team_admin",
+          "roles": []
+        }
+      ]
+    },
+    "resetPassword": {
+      "title": "Reset Password",
+      "type": "form",
+      "name": "resetPassword",
+      "path": "resetpass",
+      "display": "form",
+      "tags": [],
+      "components": [
+        {
+          "validate": {
+            "required": true
+          },
+          "conditional": {
+            "eq": "",
+            "when": null,
+            "show": ""
+          },
+          "tags": [],
+          "type": "password",
+          "clearOnHide": true,
+          "persistent": true,
+          "protected": true,
+          "suffix": "",
+          "prefix": "",
+          "placeholder": "Please provide your new password",
+          "key": "password",
+          "label": "Password",
+          "inputType": "password",
+          "tableView": false,
+          "input": true
+        },
+        {
+          "validate": {
+            "custom": "valid = (input == '{{ password }}') ? true : 'Passwords must match';",
+            "required": true
+          },
+          "conditional": {
+            "eq": "",
+            "when": null,
+            "show": ""
+          },
+          "tags": [],
+          "type": "password",
+          "clearOnHide": true,
+          "persistent": true,
+          "protected": true,
+          "suffix": "",
+          "prefix": "",
+          "placeholder": "Please verify your password",
+          "key": "verifyPassword",
+          "label": "Verify Password",
+          "inputType": "password",
+          "tableView": false,
+          "input": true
+        },
+        {
+          "type": "button",
+          "theme": "primary",
+          "disableOnInvalid": false,
+          "action": "submit",
+          "block": false,
+          "rightIcon": "",
+          "leftIcon": "",
+          "size": "md",
+          "key": "submit",
+          "tableView": false,
+          "label": "Submit",
+          "input": true
+        }
+      ],
+      "access": [
+        {
+          "type": "read_all",
+          "roles": [
+            "administrator",
+            "authenticated",
+            "anonymous"
+          ]
+        }
+      ],
+      "submissionAccess": []
     }
   },
   "actions": {
-    "employeeUserUserSave": {
-      "title": "Save Submission",
-      "name": "save",
-      "form": "employee",
-      "priority": 10,
-      "method": [
-        "create",
-        "update"
-      ],
-      "handler": [
-        "before"
-      ]
-    },
-    "employeeUserAuthenticatedRole": {
-      "title": "Role Assignment",
-      "name": "role",
-      "form": "employee",
-      "settings": {
-        "role": "authenticated",
-        "type": "add",
-        "association": "new"
-      },
-      "priority": 1,
-      "method": [
-        "create"
-      ],
-      "handler": [
-        "after"
-      ]
-    },
-    "adminAdminAdminSave": {
+    "adminSave": {
       "title": "Save Submission",
       "name": "save",
       "form": "admin",
@@ -1658,7 +1878,7 @@
         "before"
       ]
     },
-    "adminAdminAdminRole": {
+    "adminRole": {
       "title": "Role Assignment",
       "name": "role",
       "form": "admin",
@@ -1675,7 +1895,37 @@
         "after"
       ]
     },
-    "userLoginUserLoginUserLogin": {
+    "employeeSave": {
+      "title": "Save Submission",
+      "name": "save",
+      "form": "employee",
+      "priority": 10,
+      "method": [
+        "create",
+        "update"
+      ],
+      "handler": [
+        "before"
+      ]
+    },
+    "employeeAuthenticatedRole": {
+      "title": "Role Assignment",
+      "name": "role",
+      "form": "employee",
+      "settings": {
+        "role": "authenticated",
+        "type": "add",
+        "association": "new"
+      },
+      "priority": 1,
+      "method": [
+        "create"
+      ],
+      "handler": [
+        "after"
+      ]
+    },
+    "userLoginLogin": {
       "title": "Login",
       "name": "login",
       "form": "userLogin",
@@ -1701,7 +1951,7 @@
         "before"
       ]
     },
-    "benefitsEnrollmentBenefitsEnrollmentSave": {
+    "benefitsEnrollmentSave": {
       "title": "Save Submission",
       "name": "save",
       "form": "benefitsEnrollment",
@@ -1714,7 +1964,7 @@
         "before"
       ]
     },
-    "employmentApplicationEmploymentApplicationSave": {
+    "employmentApplicationSave": {
       "title": "Save Submission",
       "name": "save",
       "form": "employmentApplication",
@@ -1725,6 +1975,35 @@
       ],
       "handler": [
         "before"
+      ]
+    },
+    "sendResetEmail": {
+      "title": "Email",
+      "name": "email",
+      "form": "sendReset",
+      "condition": {
+        "eq": [],
+        "value": "",
+        "custom": "",
+        "field": []
+      },
+      "settings": {
+        "transport": "default",
+        "from": "no-reply@form.io",
+        "emails": [
+          "{{ data.email }}"
+        ],
+        "sendEach": false,
+        "subject": "Password Reset",
+        "template": "",
+        "message": "<a href=\"{{ data.applicationUrl }}/?token=[[token(data.email=employee)]]#resetpass\">Click here to reset your password</a>"
+      },
+      "priority": 0,
+      "method": [
+        "create"
+      ],
+      "handler": [
+        "after"
       ]
     }
   },
@@ -2000,12 +2279,52 @@
       ],
       "access": [
         {
+          "type": "create_all",
+          "roles": []
+        },
+        {
           "type": "read_all",
           "roles": [
             "anonymous",
             "authenticated",
             "administrator"
           ]
+        },
+        {
+          "type": "update_all",
+          "roles": []
+        },
+        {
+          "type": "delete_all",
+          "roles": []
+        },
+        {
+          "type": "create_own",
+          "roles": []
+        },
+        {
+          "type": "read_own",
+          "roles": []
+        },
+        {
+          "type": "update_own",
+          "roles": []
+        },
+        {
+          "type": "delete_own",
+          "roles": []
+        },
+        {
+          "type": "team_read",
+          "roles": []
+        },
+        {
+          "type": "team_write",
+          "roles": []
+        },
+        {
+          "type": "team_admin",
+          "roles": []
         }
       ],
       "submissionAccess": [
@@ -2039,14 +2358,34 @@
         },
         {
           "type": "read_own",
-          "roles": []
+          "roles": [
+            "authenticated"
+          ]
         },
         {
           "type": "update_own",
-          "roles": []
+          "roles": [
+            "authenticated"
+          ]
         },
         {
           "type": "delete_own",
+          "roles": []
+        },
+        {
+          "type": "team_read",
+          "roles": []
+        },
+        {
+          "type": "team_write",
+          "roles": []
+        },
+        {
+          "type": "team_admin",
+          "roles": []
+        },
+        {
+          "type": "self",
           "roles": []
         }
       ]
