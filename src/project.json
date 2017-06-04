@@ -211,7 +211,7 @@
                 "custom": "",
                 "multiple": "",
                 "integer": "",
-                "step": "0.00",
+                "step": "0.01",
                 "max": "",
                 "min": "",
                 "required": false
@@ -793,18 +793,6 @@
           "roles": [
             "authenticated"
           ]
-        },
-        {
-          "type": "team_read",
-          "roles": []
-        },
-        {
-          "type": "team_write",
-          "roles": []
-        },
-        {
-          "type": "team_admin",
-          "roles": []
         }
       ]
     },
@@ -1594,18 +1582,6 @@
             "anonymous",
             "authenticated"
           ]
-        },
-        {
-          "type": "team_read",
-          "roles": []
-        },
-        {
-          "type": "team_write",
-          "roles": []
-        },
-        {
-          "type": "team_admin",
-          "roles": []
         }
       ]
     },
@@ -1718,18 +1694,6 @@
         {
           "type": "delete_own",
           "roles": []
-        },
-        {
-          "type": "team_read",
-          "roles": []
-        },
-        {
-          "type": "team_write",
-          "roles": []
-        },
-        {
-          "type": "team_admin",
-          "roles": []
         }
       ],
       "submissionAccess": [
@@ -1765,18 +1729,6 @@
         },
         {
           "type": "delete_own",
-          "roles": []
-        },
-        {
-          "type": "team_read",
-          "roles": []
-        },
-        {
-          "type": "team_write",
-          "roles": []
-        },
-        {
-          "type": "team_admin",
           "roles": []
         }
       ]
@@ -2313,18 +2265,6 @@
         {
           "type": "delete_own",
           "roles": []
-        },
-        {
-          "type": "team_read",
-          "roles": []
-        },
-        {
-          "type": "team_write",
-          "roles": []
-        },
-        {
-          "type": "team_admin",
-          "roles": []
         }
       ],
       "submissionAccess": [
@@ -2370,18 +2310,6 @@
         },
         {
           "type": "delete_own",
-          "roles": []
-        },
-        {
-          "type": "team_read",
-          "roles": []
-        },
-        {
-          "type": "team_write",
-          "roles": []
-        },
-        {
-          "type": "team_admin",
           "roles": []
         },
         {
