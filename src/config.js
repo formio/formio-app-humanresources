@@ -1,4 +1,5 @@
-var APP_URL = 'https://yourapp.form.io';
+var PROJECT = 'examples';
+var APP_URL = 'https://' + PROJECT + '.form.io';
 var API_URL = 'https://api.form.io';
 
 // Parse query string
@@ -18,6 +19,7 @@ if (query.token) {
 }
 
 angular.module('formioApp').constant('AppConfig', {
+  project: PROJECT,
   appUrl: APP_URL,
   apiUrl: API_URL,
   forms: {

@@ -96,6 +96,10 @@
     // Register the form builder provider.
     FormioFormBuilderProvider.register('', AppConfig.appUrl, {
       templates: {
+        form: {
+          abstract: 'views/form/form.html',
+          view: 'views/form/view.html'
+        },
         submission: {
           view: 'views/form/submission/view.html'
         }
@@ -109,7 +113,13 @@
               $scope,
               $rootScope
             ) {
+              $scope.formpath = '';
+              $scope.project = AppConfig.project;
               $rootScope.whenReady.then(function() {
+                $scope.formLoadPromise.then(function() {
+                  $scope.formpath = $scope.form.path;
+                });
+
                 if (!$rootScope.isAdministrator) {
                   $scope.hideComponents = ['employee'];
                   $scope.submission.data.employee = $rootScope.user;
