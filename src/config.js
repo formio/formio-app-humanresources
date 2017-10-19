@@ -1,4 +1,4 @@
-var PROJECT = 'examples';
+var PROJECT = 'humanresources';
 var APP_URL = 'https://' + PROJECT + '.form.io';
 var API_URL = 'https://api.form.io';
 
