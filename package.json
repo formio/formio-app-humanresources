@@ -1,7 +1,9 @@
 {
   "name": "humanResourcesApp",
   "version": "1.2.0",
-  "dependencies": {},
+  "dependencies": {
+    "formiojs": "^3.0.0-rc.5"
+  },
   "scripts": {
     "test": "gulp test"
   },
