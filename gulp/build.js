@@ -81,7 +81,7 @@ gulp.task('ui-grid-fonts', function () {
     'bower_components/ng-formio-grid/dist/*',
   ])
     .pipe($.filter('**/*.{eot,svg,ttf,woff,woff2}'))
-    .pipe(gulp.dest(path.join(conf.paths.dist, '/styles/')));
+    .pipe(gulp.dest(path.join(conf.paths.dist, '/styles/fonts/')));
 });
 
 gulp.task('other', function () {
